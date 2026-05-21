@@ -1,0 +1,17 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="64" height="64" fill="#0a0a0a" rx="12"/>
+  
+  <!-- Main 404 Design -->
+  <g transform="translate(32, 32)">
+    <!-- Left "4" -->
+    <text x="-16" y="8" font-family="'Arial Black', sans-serif" font-size="28" font-weight="900" fill="#ffffff">4</text>
+    
+    <!-- Center "0" - Modern ring -->
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#00ffff" stroke-width="2"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Right "4" -->
+    <text x="8" y="8" font-family="'Arial Black', sans-serif" font-size="28" font-weight="900" fill="#ffffff">4</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+packages:
+  - .
+allowBuilds:
+  '@clerk/shared': false
+  '@prisma/engines': false
+  '@tsparticles/engine': false
+  prisma: false
+  sharp: false
+  unrs-resolver: false
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver

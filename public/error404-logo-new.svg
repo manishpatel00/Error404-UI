@@ -1,0 +1,20 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="128" cy="128" r="128" fill="#0a0a0a"/>
+  
+  <!-- Main Design: Modern 404 -->
+  <g transform="translate(128, 128)">
+    <!-- Left "4" - Bold geometric -->
+    <text x="-55" y="30" font-family="Arial, sans-serif" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="-5">4</text>
+    
+    <!-- Center "0" - Ring design -->
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#00ffff" stroke-width="6"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Right "4" - Bold geometric -->
+    <text x="35" y="30" font-family="Arial, sans-serif" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="-5">4</text>
+  </g>
+  
+  <!-- Accent line at bottom -->
+  <line x1="50" y1="240" x2="206" y2="240" stroke="#00ffff" stroke-width="3" stroke-linecap="round"/>
+</svg>

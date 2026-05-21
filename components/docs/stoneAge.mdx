@@ -1,0 +1,201 @@
+import {
+  CodeBlock,
+  Dependencies,
+} from "@/components/docs/component-installation";
+import { DynamicCodeBlock } from "@/components/docs/DynamicCodeBlock";
+import { ComponentPreview } from "@/components/docs/component-preview";
+import { CLICommand } from "@/components/docs/cli-command";
+import { PropsTable } from "@/components/docs/props-table";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/Card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import Badge from "@/components/ui/Badge";
+import { Separator } from "@/components/ui/Separator";
+
+<div className="flex flex-wrap items-center gap-2 mb-4">
+  <Badge>404 page</Badge>
+  <Badge variant="outline">Classic</Badge>
+  <Badge variant="secondary">Illustration</Badge>
+</div>
+
+A friendly and classic 404 page featuring a **playful illustration** and a clear call to action, perfect for beginner-friendly projects.
+
+<ComponentPreview
+  slug="stoneage"
+  className="!p-0 border-0"
+  code={`import StoneAge from "@/components/404/StoneAge"
+
+export default function NotFoundPage() {
+  return <StoneAge />
+}`}
+/>
+
+<section id="installation" className="scroll-mt-28">
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-8">
+  <TabsList className="mb-6 bg-zinc-100 dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800">
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+<TabsContent value="cli" className="mt-0">
+  <div className="space-y-4">
+    <div className="flex items-center gap-2 text-sm text-zinc-400">
+      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold">1</span>
+      <span>Run the following command in your terminal:</span>
+    </div>
+    
+    <CLICommand componentName="stoneage" />
+    
+    <p className="text-xs text-zinc-500 pl-7">
+      This will add the <code>StoneAge</code> component to your project automatically.
+    </p>
+  </div>
+</TabsContent>
+
+<TabsContent value="manual" className="mt-0">
+  <div className="space-y-6">
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">1</span>
+        <span>Copy the component source code</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Create <code>components/404/StoneAge.tsx</code> and paste the following:
+        </p>
+        <DynamicCodeBlock
+          fileName="StoneAge"
+          language="tsx"
+          title="StoneAge.tsx"
+          expandable={true}
+        />
+      </div>
+    </div>
+
+    <Separator className="bg-zinc-800/50" />
+
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">2</span>
+        <span>Use it in your not-found route</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Import and render the component in your <code>not-found.tsx</code> file:
+        </p>
+        <CodeBlock
+          filename="not-found.tsx"
+          code={`import StoneAge from "@/components/404/StoneAge"
+
+export default function NotFound() {
+  return <StoneAge />
+}`}
+        />
+      </div>
+    </div>
+  </div>
+</TabsContent>
+</Tabs>
+
+</section>
+
+<section id="usage" className="scroll-mt-28">
+
+## Usage
+
+<div className="mt-4 space-y-3">
+  <p className="text-sm text-zinc-400">
+    Import and render the component in your <code>not-found.tsx</code> file:
+  </p>
+  
+  <CodeBlock
+    filename="not-found.tsx"
+    code={`import StoneAge from "@/components/404/StoneAge"
+
+export default function NotFoundPage() {
+  return <StoneAge />
+}`}
+  />
+</div>
+
+</section>
+
+<section id="props" className="scroll-mt-28">
+
+## Props
+
+<div className="mt-4">
+  <PropsTable
+    data={[
+      {
+        prop: "className",
+        type: "string",
+        defaultValue: "-",
+        description: "Additional CSS classes for styling the container.",
+      },
+    ]}
+  />
+  
+  <p className="text-xs text-zinc-500 mt-4 italic">
+    This component requires no props by default. Just drop it in and it works!
+  </p>
+</div>
+
+</section>
+
+<section id="features" className="scroll-mt-28">
+
+## Features
+
+<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Friendly Illustration</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Engaging visual design that softens the frustration of being lost.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Clear Navigation</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Prominent call-to-action button to guide users back home instantly.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Arvo Typography</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Uses the distinct Arvo font for a professional yet approachable look.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Centered Layout</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Perfectly balanced design that maintains focus on all device types.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all sm:col-span-2">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+      <p className="text-sm font-medium text-zinc-200">Classic Reliability</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">A time-tested layout that works universally across various web domains.</p>
+  </div>
+</div>
+
+</section>
+

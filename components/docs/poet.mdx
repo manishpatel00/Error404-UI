@@ -1,0 +1,201 @@
+import {
+  CodeBlock,
+  Dependencies,
+} from "@/components/docs/component-installation";
+import { DynamicCodeBlock } from "@/components/docs/DynamicCodeBlock";
+import { ComponentPreview } from "@/components/docs/component-preview";
+import { CLICommand } from "@/components/docs/cli-command";
+import { PropsTable } from "@/components/docs/props-table";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/Card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import Badge from "@/components/ui/Badge";
+import { Separator } from "@/components/ui/Separator";
+
+<div className="flex flex-wrap items-center gap-2 mb-4">
+  <Badge>404 page</Badge>
+  <Badge variant="outline">Creative</Badge>
+  <Badge variant="secondary">No props</Badge>
+</div>
+
+A poetic and literary 404 page featuring a **Raven-inspired theme** and a stanza of code-themed poetry.
+
+<ComponentPreview
+  slug="poet"
+  className="!p-0 border-0"
+  code={`import Poet from "@/components/404/Poet"
+
+export default function NotFoundPage() {
+  return <Poet />
+}`}
+/>
+
+<section id="installation" className="scroll-mt-28">
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-8">
+  <TabsList className="mb-6 bg-zinc-100 dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800">
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+<TabsContent value="cli" className="mt-0">
+  <div className="space-y-4">
+    <div className="flex items-center gap-2 text-sm text-zinc-400">
+      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold">1</span>
+      <span>Run the following command in your terminal:</span>
+    </div>
+    
+    <CLICommand componentName="poet" />
+    
+    <p className="text-xs text-zinc-500 pl-7">
+      This will add the <code>Poet</code> component to your project automatically.
+    </p>
+  </div>
+</TabsContent>
+
+<TabsContent value="manual" className="mt-0">
+  <div className="space-y-6">
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">1</span>
+        <span>Copy the component source code</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Create <code>components/404/Poet.tsx</code> and paste the following:
+        </p>
+        <DynamicCodeBlock
+          fileName="Poet"
+          language="tsx"
+          title="Poet.tsx"
+          expandable={true}
+        />
+      </div>
+    </div>
+
+    <Separator className="bg-zinc-800/50" />
+
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">2</span>
+        <span>Use it in your not-found route</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Import and render the component in your <code>not-found.tsx</code> file:
+        </p>
+        <CodeBlock
+          filename="not-found.tsx"
+          code={`import Poet from "@/components/404/Poet"
+
+export default function NotFound() {
+  return <Poet />
+}`}
+        />
+      </div>
+    </div>
+  </div>
+</TabsContent>
+</Tabs>
+
+</section>
+
+<section id="usage" className="scroll-mt-28">
+
+## Usage
+
+<div className="mt-4 space-y-3">
+  <p className="text-sm text-zinc-400">
+    Import and render the component in your <code>not-found.tsx</code> file:
+  </p>
+  
+  <CodeBlock
+    filename="not-found.tsx"
+    code={`import Poet from "@/components/404/Poet"
+
+export default function NotFoundPage() {
+  return <Poet />
+}`}
+  />
+</div>
+
+</section>
+
+<section id="props" className="scroll-mt-28">
+
+## Props
+
+<div className="mt-4">
+  <PropsTable
+    data={[
+      {
+        prop: "className",
+        type: "string",
+        defaultValue: "-",
+        description: "Additional CSS classes for styling the container.",
+      },
+    ]}
+  />
+  
+  <p className="text-xs text-zinc-500 mt-4 italic">
+    This component requires no props by default. Just drop it in and it works!
+  </p>
+</div>
+
+</section>
+
+<section id="features" className="scroll-mt-28">
+
+## Features
+
+<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-slate-500 shadow-[0_0_8px_rgba(100,116,139,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Literary Theme</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Unique artistic design inspired by the works of Edgar Allan Poe.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Custom Poetry</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Thematic stanzas specially written for a 404 error context.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Classic Layout</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Clean, readable typography that mimics a page from a book.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Fully Responsive</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Maintains its artistic integrity across all device screen sizes.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all sm:col-span-2">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+      <p className="text-sm font-medium text-zinc-200">Artistic Polish</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Subtle textures and careful font selection for a premium reading experience.</p>
+  </div>
+</div>
+
+</section>
+

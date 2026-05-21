@@ -1,0 +1,23 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="256" height="256" fill="#0a0a0a" rx="32"/>
+  
+  <!-- Main 404 Design - Center -->
+  <g transform="translate(128, 128)">
+    <!-- Subtle background circle -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.1"/>
+    
+    <!-- Left "4" - Bright white -->
+    <text x="-54" y="32" font-family="'Arial Black', sans-serif" font-size="96" font-weight="900" fill="#ffffff" letter-spacing="-8">4</text>
+    
+    <!-- Center "0" - Bright cyan ring design -->
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#00ffff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#00ffff" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+    
+    <!-- Right "4" - Bright white -->
+    <text x="32" y="32" font-family="'Arial Black', sans-serif" font-size="96" font-weight="900" fill="#ffffff" letter-spacing="-8">4</text>
+    
+    <!-- Bottom accent line -->
+    <line x1="-70" y1="60" x2="70" y2="60" stroke="#00ffff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>

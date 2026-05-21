@@ -1,0 +1,202 @@
+import {
+  CodeBlock,
+  Dependencies,
+} from "@/components/docs/component-installation";
+import { DynamicCodeBlock } from "@/components/docs/DynamicCodeBlock";
+import { ComponentPreview } from "@/components/docs/component-preview";
+import { CLICommand } from "@/components/docs/cli-command";
+import { PropsTable } from "@/components/docs/props-table";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/Card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import Badge from "@/components/ui/Badge";
+import { Separator } from "@/components/ui/Separator";
+
+
+<div className="flex flex-wrap items-center gap-2 mb-4">
+  <Badge>404 page</Badge>
+  <Badge variant="outline">Interactive</Badge>
+  <Badge variant="secondary">Game</Badge>
+</div>
+
+An interactive **Bug Game** 404 page where users play as a bug jumping through clouds to reach safety. Features score tracking, increasing difficulty, and a "victory" state upon reaching score 404.
+
+<ComponentPreview
+  slug="buggame"
+  className="!p-0 border-0"
+  code={`import BugGame from "@/components/404/BugGame"
+
+export default function NotFoundPage() {
+  return <BugGame />
+}`}
+/>
+
+<section id="installation" className="scroll-mt-28">
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-8">
+  <TabsList className="mb-6 bg-zinc-100 dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800">
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+<TabsContent value="cli" className="mt-0">
+  <div className="space-y-4">
+    <div className="flex items-center gap-2 text-sm text-zinc-400">
+      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold">1</span>
+      <span>Run the following command in your terminal:</span>
+    </div>
+    
+    <CLICommand componentName="buggame" />
+    
+    <p className="text-xs text-zinc-500 pl-7">
+      This will add the <code>BugGame</code> component to your project automatically.
+    </p>
+  </div>
+</TabsContent>
+
+<TabsContent value="manual" className="mt-0">
+  <div className="space-y-6">
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">1</span>
+        <span>Copy the component source code</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Create <code>components/404/BugGame.tsx</code> and paste the following:
+        </p>
+        <DynamicCodeBlock
+          fileName="BugGame"
+          language="tsx"
+          title="BugGame.tsx"
+          expandable={true}
+        />
+      </div>
+    </div>
+
+    <Separator className="bg-zinc-800/50" />
+
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">2</span>
+        <span>Use it in your not-found route</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Import and render the component in your <code>not-found.tsx</code> file:
+        </p>
+        <CodeBlock
+          filename="not-found.tsx"
+          code={`import BugGame from "@/components/404/BugGame"
+
+export default function NotFound() {
+  return <BugGame />
+}`}
+        />
+      </div>
+    </div>
+  </div>
+</TabsContent>
+</Tabs>
+
+</section>
+
+<section id="usage" className="scroll-mt-28">
+
+## Usage
+
+<div className="mt-4 space-y-3">
+  <p className="text-sm text-zinc-400">
+    Import and render the component in your <code>not-found.tsx</code> file:
+  </p>
+  
+  <CodeBlock
+    filename="not-found.tsx"
+    code={`import BugGame from "@/components/404/BugGame"
+
+export default function NotFoundPage() {
+  return <BugGame />
+}`}
+  />
+</div>
+
+</section>
+
+<section id="props" className="scroll-mt-28">
+
+## Props
+
+<div className="mt-4">
+  <PropsTable
+    data={[
+      {
+        prop: "className",
+        type: "string",
+        defaultValue: "-",
+        description: "Additional CSS classes for styling the container.",
+      },
+    ]}
+  />
+  
+  <p className="text-xs text-zinc-500 mt-4 italic">
+    This component requires no props by default. Just drop it in and it works!
+  </p>
+</div>
+
+</section>
+
+<section id="features" className="scroll-mt-28">
+
+## Features
+
+<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Interactive Gameplay</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Play as a bug jumping through clouds with smooth physics.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Score & Logic</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Real-time score tracking with high score persistence.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Difficulty Scaling</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Game speed and difficulty increase as you progress.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Victory State</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Reach score 404 for a special thematic victory screen.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all sm:col-span-2">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Responsive Engine</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Custom canvas engine with touch support and high DPI scaling.</p>
+  </div>
+</div>
+
+</section>
+

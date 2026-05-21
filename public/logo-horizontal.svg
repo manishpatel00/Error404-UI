@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main 404 Design -->
+  <g transform="translate(60, 60)">
+    <!-- Left "4" -->
+    <text x="-45" y="28" font-family="'Arial Black', sans-serif" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="-6">4</text>
+    
+    <!-- Center "0" - Bright cyan ring -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#00ffff" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Right "4" -->
+    <text x="28" y="28" font-family="'Arial Black', sans-serif" font-size="80" font-weight="900" fill="#ffffff" letter-spacing="-6">4</text>
+    
+    <!-- Bottom line accent -->
+    <line x1="-55" y1="48" x2="55" y2="48" stroke="#00ffff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- "Error404" text on right -->
+  <g transform="translate(180, 45)">
+    <text x="0" y="0" font-family="'Arial', sans-serif" font-size="32" font-weight="700" fill="#ffffff" letter-spacing="0.5">Error404</text>
+    <text x="0" y="30" font-family="'Arial', sans-serif" font-size="14" font-weight="400" fill="#00ffff" opacity="0.9" letter-spacing="1">CREATIVE ERROR PAGES</text>
+  </g>
+</svg>

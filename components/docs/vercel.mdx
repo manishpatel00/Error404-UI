@@ -1,0 +1,201 @@
+import {
+  CodeBlock,
+  Dependencies,
+} from "@/components/docs/component-installation";
+import { DynamicCodeBlock } from "@/components/docs/DynamicCodeBlock";
+import { ComponentPreview } from "@/components/docs/component-preview";
+import { CLICommand } from "@/components/docs/cli-command";
+import { PropsTable } from "@/components/docs/props-table";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/Card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import Badge from "@/components/ui/Badge";
+import { Separator } from "@/components/ui/Separator";
+
+<div className="flex flex-wrap items-center gap-2 mb-4">
+  <Badge>404 page</Badge>
+  <Badge variant="outline">Modern</Badge>
+  <Badge variant="secondary">Clean</Badge>
+</div>
+
+A clean, **Vercel-inspired** 404 page with a sleek design, gradient typography, and smooth animations.
+
+<ComponentPreview
+  slug="vercel"
+  className="!p-0 border-0"
+  code={`import Vercel from "@/components/404/Vercel"
+
+export default function NotFoundPage() {
+  return <Vercel />
+}`}
+/>
+
+<section id="installation" className="scroll-mt-28">
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-8">
+  <TabsList className="mb-6 bg-zinc-100 dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800">
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+<TabsContent value="cli" className="mt-0">
+  <div className="space-y-4">
+    <div className="flex items-center gap-2 text-sm text-zinc-400">
+      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold">1</span>
+      <span>Run the following command in your terminal:</span>
+    </div>
+    
+    <CLICommand componentName="vercel" />
+    
+    <p className="text-xs text-zinc-500 pl-7">
+      This will add the <code>Vercel</code> component to your project automatically.
+    </p>
+  </div>
+</TabsContent>
+
+<TabsContent value="manual" className="mt-0">
+  <div className="space-y-6">
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">1</span>
+        <span>Copy the component source code</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Create <code>components/404/Vercel.tsx</code> and paste the following:
+        </p>
+        <DynamicCodeBlock
+          fileName="Vercel"
+          language="tsx"
+          title="Vercel.tsx"
+          expandable={true}
+        />
+      </div>
+    </div>
+
+    <Separator className="bg-zinc-800/50" />
+
+    <div>
+      <div className="flex items-center gap-2 text-sm text-zinc-400 mb-3">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold">2</span>
+        <span>Use it in your not-found route</span>
+      </div>
+      <div className="pl-7">
+        <p className="text-xs text-zinc-500 mb-4">
+          Import and render the component in your <code>not-found.tsx</code> file:
+        </p>
+        <CodeBlock
+          filename="not-found.tsx"
+          code={`import Vercel from "@/components/404/Vercel"
+
+export default function NotFound() {
+  return <Vercel />
+}`}
+        />
+      </div>
+    </div>
+  </div>
+</TabsContent>
+</Tabs>
+
+</section>
+
+<section id="usage" className="scroll-mt-28">
+
+## Usage
+
+<div className="mt-4 space-y-3">
+  <p className="text-sm text-zinc-400">
+    Import and render the component in your <code>not-found.tsx</code> file:
+  </p>
+  
+  <CodeBlock
+    filename="not-found.tsx"
+    code={`import Vercel from "@/components/404/Vercel"
+
+export default function NotFoundPage() {
+  return <Vercel />
+}`}
+  />
+</div>
+
+</section>
+
+<section id="props" className="scroll-mt-28">
+
+## Props
+
+<div className="mt-4">
+  <PropsTable
+    data={[
+      {
+        prop: "className",
+        type: "string",
+        defaultValue: "-",
+        description: "Additional CSS classes for styling the container.",
+      },
+    ]}
+  />
+  
+  <p className="text-xs text-zinc-500 mt-4 italic">
+    This component requires no props by default. Just drop it in and it works!
+  </p>
+</div>
+
+</section>
+
+<section id="features" className="scroll-mt-28">
+
+## Features
+
+<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-slate-200 shadow-[0_0_8px_rgba(226,232,240,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Vercel Aesthetic</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Minimalist and professional design inspired by modern developer platforms.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Gradient Typography</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Smooth gradient text effects that provide a premium and dynamic feel.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 shadow-[0_0_8px_rgba(161,161,170,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Clean Typography</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Optimized font weights and spacing for maximum readability and style.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+      <p className="text-sm font-medium text-zinc-200">Responsive Layout</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">Seamlessly adapts to mobile and desktop views with pixel-perfect precision.</p>
+  </div>
+  
+  <div className="group p-4 rounded-xl bg-white/[0.03] border border-zinc-200/5 dark:border-zinc-800/50 hover:bg-white/[0.05] transition-all sm:col-span-2">
+    <div className="flex items-center gap-2 mb-1">
+      <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+      <p className="text-sm font-medium text-zinc-200">Modern Utility</p>
+    </div>
+    <p className="text-xs text-zinc-500 leading-relaxed">A contemporary choice for startups and tech-focused personal portfolios.</p>
+  </div>
+</div>
+
+</section>
+
