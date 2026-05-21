@@ -45,3 +45,29 @@ next-env.d.ts
 
 # clerk configuration (can include secrets)
 /.clerk/
+
+
+# local package manager store
+.pnpm-store
+
+# prisma local db
+dev.db
+dev.db-journal
+
+# turbo
+.turbo
+
+# vscode
+.vscode
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# local logs
+logs
+*.log
+
+# local temp
+tmp
+temprm -rf .pnpm-store
