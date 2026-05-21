@@ -1,0 +1,30 @@
+{
+  "buildCommand": "pnpm run build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "nodeVersion": "20.x",
+  "env": {
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": {
+      "type": "secret"
+    },
+    "CLERK_SECRET_KEY": {
+      "type": "secret"
+    },
+    "DATABASE_URL": {
+      "type": "secret"
+    },
+    "BETTER_AUTH_SECRET": {
+      "type": "secret"
+    },
+    "NEXT_PUBLIC_BETTER_AUTH_URL": {
+      "default": "https://error404-ui.vercel.app"
+    },
+    "BETTER_AUTH_URL": {
+      "default": "https://error404-ui.vercel.app"
+    },
+    "NODE_ENV": {
+      "default": "production"
+    }
+  }
+}
