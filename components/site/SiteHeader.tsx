@@ -134,12 +134,12 @@ export default function SiteHeader() {
               <div className="flex md:hidden items-center">
                 <Link href="/" className="hover:opacity-80 transition-opacity">
                   <img
-                    src="/favicon.svg"
+                    src="/logo-new.svg"
                     alt="Error404 Logo"
-                    width={32}
-                    height={32}
+                    width={56}
+                    height={56}
                     className="object-contain"
-                    style={{ width: 32, height: 32 }}
+                    style={{ width: 56, height: 56 }}
                   />
                 </Link>
               </div>
@@ -147,12 +147,12 @@ export default function SiteHeader() {
               <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
                 <Link href="/" className="hover:opacity-80 transition-opacity">
                   <img
-                    src="/favicon.svg"
+                    src="/logo-new.svg"
                     alt="Error404 Logo"
-                    width={36}
-                    height={36}
+                    width={48}
+                    height={48}
                     className="object-contain"
-                    style={{ width: 36, height: 36 }}
+                    style={{ width: 48, height: 48 }}
                   />
                 </Link>
               </div>

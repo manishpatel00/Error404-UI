@@ -53,7 +53,7 @@ export default function SiteFooter() {
               <Link href="/" className="inline-flex items-center gap-3 transition-all group">
                 <div className="p-2.5 rounded-2xl bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 transition-colors shadow-2xl">
                   <Image
-                    src="/favicon.ico"
+                    src="/favicon.svg"
                     alt="Error404 logo"
                     width={28}
                     height={28}
@@ -62,7 +62,7 @@ export default function SiteFooter() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl font-bold tracking-tight text-white">Error404</span>
-                  <span className="text-[10px] text-zinc-500 font-medium uppercase tracking-[0.2em]">The error page lab</span>
+                  <span className="text-[10px] text-zinc-500 font-medium uppercase tracking-[0.2em]">Beautiful Error Experiences</span>
                 </div>
               </Link>
               
