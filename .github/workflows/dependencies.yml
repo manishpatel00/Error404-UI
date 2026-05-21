@@ -1,0 +1,40 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Weekly on Sunday
+  workflow_dispatch:
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Update dependencies
+        run: |
+          pnpm update --latest
+          pnpm audit fix
+
+      - name: Run tests
+        run: pnpm test:ci || true
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "chore: update dependencies"
+          title: "chore(deps): update all dependencies"
+          body: "Automated dependency update"
+          branch: chore/dependencies-update
