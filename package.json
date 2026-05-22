@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "vercel-build": "prisma generate && next build",
     "dev": "next dev",
     "build": "prisma generate && next build",
     "build:analyze": "ANALYZE=true next build",
@@ -15,8 +15,8 @@
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --coverage",
     "test:coverage": "jest --coverage",
-    "prepare": "husky install",
-    "postinstall": "prisma generate && husky install"
+    "prepare": "husky install 2>/dev/null || true",
+    "postinstall": "prisma generate && husky install 2>/dev/null || true"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.21",
