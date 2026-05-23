@@ -593,7 +593,7 @@ MIT License - Copyright (c) 2026 Manish Patel
 
 <div align="center">
 
-**[Visit Website](https://error404.vercel.app/)** • **[View Components](https://error404.vercel.app/components)** • **[Read Docs](https://error404.vercel.app/docs)**
+**[Visit Website](https://error404-ui.vercel.app/)** • **[View Components](https://error404-ui.vercel.app/components)** • **[Read Docs](https://error404.vercel.app/docs)**
 
 Made with ❤️ by developers, for developers
 
