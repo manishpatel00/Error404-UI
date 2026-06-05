@@ -1,0 +1,49 @@
+{
+  "name": "error404-react",
+  "version": "1.0.0",
+  "description": "Beautiful 404 error page components for React & Next.js.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm",
+    "dev": "tsup src/index.ts --format cjs,esm --watch"
+  },
+  "keywords": [
+    "404",
+    "error",
+    "ui",
+    "nextjs",
+    "react",
+    "components"
+  ],
+  "author": "manishpatel00",
+  "license": "MIT",
+  "dependencies": {
+    "@tsparticles/engine": "^3.0.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.0",
+    "framer-motion": "^12.4.7",
+    "lucide-react": "^0.476.0"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

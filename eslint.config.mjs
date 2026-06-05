@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Ignore published package sources (copies of components, not app code)
+    "packages/**",
   ]),
 ]);
 

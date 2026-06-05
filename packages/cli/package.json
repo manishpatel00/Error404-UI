@@ -1,0 +1,36 @@
+{
+  "name": "error404-cli",
+  "version": "1.0.0",
+  "description": "CLI to add beautiful 404 error pages to your Next.js application.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "error404": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts",
+    "dev": "tsup src/index.ts --format cjs --watch"
+  },
+  "keywords": [
+    "404",
+    "error",
+    "ui",
+    "nextjs",
+    "react",
+    "components",
+    "cli"
+  ],
+  "author": "manishpatel00",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/prompts": "^2.4.9",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
