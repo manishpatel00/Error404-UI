@@ -1,6 +1,6 @@
 {
   "name": "error404-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to add beautiful 404 error pages to your Next.js application.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

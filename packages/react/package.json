@@ -1,6 +1,6 @@
 {
   "name": "error404-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Beautiful 404 error page components for React & Next.js.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
