@@ -3,13 +3,19 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import prisma from "./db";
 
 // Determine the database provider
-const provider = (process.env.DATABASE_PROVIDER || "sqlite") as "sqlite" | "postgresql";
+const provider = (process.env.DATABASE_PROVIDER || "sqlite") as
+  | "sqlite"
+  | "postgresql";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, { provider }),
-  baseURL: process.env.BETTER_AUTH_URL,
+  baseURL:
+    process.env.BETTER_AUTH_URL ||
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"),
   basePath: "/api/auth",
-  secret: process.env.BETTER_AUTH_SECRET!,
+  secret: process.env.BETTER_AUTH_SECRET || "fallback_secret_for_build",
 
   emailAndPassword: {
     enabled: true,
