@@ -9,13 +9,12 @@ import { ComponentPreview } from "@/components/docs/component-preview";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: ({ href, children, ...props }) => {
-      const { ref: _ref, ...anchorProps } = props;
       if (href?.startsWith("/")) {
         return (
           <Link
             href={href}
             className="text-zinc-200 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/40"
-            {...anchorProps}
+            {...props}
           >
             {children}
           </Link>
@@ -27,7 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           target="_blank"
           rel="noreferrer"
           className="text-zinc-200 underline underline-offset-4 decoration-white/20 hover:text-white hover:decoration-white/40"
-          {...anchorProps}
+          {...props}
         >
           {children}
         </a>
