@@ -1,10 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import CodeBlock from "@/components/ui/CodeBlock";
-import {
-  CodeBlock as DocsCodeBlock,
-  Dependencies,
-} from "@/components/docs/component-installation";
+import { CodeBlock as DocsCodeBlock, Dependencies } from "@/components/docs/component-installation";
 import { CLICommand } from "@/components/docs/cli-command";
 import { PropsTable } from "@/components/docs/props-table";
 import { ComponentPreview } from "@/components/docs/component-preview";
@@ -12,8 +9,7 @@ import { ComponentPreview } from "@/components/docs/component-preview";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: ({ href, children, ...props }) => {
-      const { ref: ignoredRef, ...anchorProps } = props;
-      void ignoredRef;
+      const { ref: _ref, ...anchorProps } = props;
       if (href?.startsWith("/")) {
         return (
           <Link
@@ -83,15 +79,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     li: ({ children }) => <li className="text-zinc-400">{children}</li>,
     hr: () => <hr className="border-white/10 my-8" />,
-    section: ({ children, className, ...props }) => {
-      const { ref: ignoredRef, ...sectionProps } = props;
-      void ignoredRef;
-      return (
-        <section className={className} {...sectionProps}>
-          {children}
-        </section>
-      );
-    },
+    section: ({ children, className, ...props }) => (
+      <section className={className} {...props}>
+        {children}
+      </section>
+    ),
     CodeBlock: DocsCodeBlock,
     Dependencies,
     CLICommand,
